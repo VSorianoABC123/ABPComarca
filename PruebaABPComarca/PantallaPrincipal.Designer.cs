@@ -1,6 +1,6 @@
 ﻿namespace PruebaABPComarca
 {
-    partial class Form1
+    partial class PantallaPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
