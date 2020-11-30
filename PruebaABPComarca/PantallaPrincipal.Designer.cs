@@ -39,7 +39,7 @@
             this.buttonPreguntas.BackColor = System.Drawing.SystemColors.Highlight;
             this.buttonPreguntas.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPreguntas.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonPreguntas.Location = new System.Drawing.Point(91, 153);
+            this.buttonPreguntas.Location = new System.Drawing.Point(12, 124);
             this.buttonPreguntas.Name = "buttonPreguntas";
             this.buttonPreguntas.Size = new System.Drawing.Size(232, 138);
             this.buttonPreguntas.TabIndex = 0;
@@ -52,7 +52,7 @@
             this.buttonPersonajes.BackColor = System.Drawing.SystemColors.Highlight;
             this.buttonPersonajes.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPersonajes.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonPersonajes.Location = new System.Drawing.Point(462, 153);
+            this.buttonPersonajes.Location = new System.Drawing.Point(276, 124);
             this.buttonPersonajes.Name = "buttonPersonajes";
             this.buttonPersonajes.Size = new System.Drawing.Size(232, 138);
             this.buttonPersonajes.TabIndex = 1;
@@ -62,22 +62,22 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PruebaABPComarca.Properties.Resources.OPCION_1;
-            this.pictureBox1.Location = new System.Drawing.Point(339, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(205, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(106, 107);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // PantallaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(518, 278);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonPersonajes);
             this.Controls.Add(this.buttonPreguntas);
-            this.Name = "Form1";
+            this.Name = "PantallaPrincipal";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
