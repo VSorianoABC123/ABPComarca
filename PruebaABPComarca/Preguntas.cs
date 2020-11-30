@@ -10,21 +10,25 @@ using System.Windows.Forms;
 
 namespace PruebaABPComarca
 {
-    public partial class PantallaPrincipal : Form
+    public partial class Preguntas : Form
     {
-        public PantallaPrincipal()
+        public Preguntas()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void buttonEditar_Click(object sender, EventArgs e)
         {
-            Preguntas pregunta = new Preguntas();
-            pregunta.ShowDialog();
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonCrear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonBorrar_Click(object sender, EventArgs e)
         {
 
         }
