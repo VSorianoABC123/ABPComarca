@@ -31,11 +31,12 @@
             this.buttonCrear = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonBorrar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewPreguntas = new System.Windows.Forms.DataGridView();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dificultad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.labelIdioma = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreguntas)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCrear
@@ -77,20 +78,21 @@
             this.buttonBorrar.UseVisualStyleBackColor = false;
             this.buttonBorrar.Click += new System.EventHandler(this.buttonBorrar_Click);
             // 
-            // dataGridView1
+            // dataGridViewPreguntas
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewPreguntas.AllowUserToAddRows = false;
+            this.dataGridViewPreguntas.AllowUserToDeleteRows = false;
+            this.dataGridViewPreguntas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPreguntas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Titulo,
             this.Edad,
             this.Dificultad});
-            this.dataGridView1.Location = new System.Drawing.Point(52, 76);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(501, 349);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGridViewPreguntas.Location = new System.Drawing.Point(52, 76);
+            this.dataGridViewPreguntas.Name = "dataGridViewPreguntas";
+            this.dataGridViewPreguntas.ReadOnly = true;
+            this.dataGridViewPreguntas.Size = new System.Drawing.Size(501, 349);
+            this.dataGridViewPreguntas.TabIndex = 4;
+            this.dataGridViewPreguntas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPreguntas_CellContentClick);
             // 
             // Titulo
             // 
@@ -116,20 +118,32 @@
             this.Dificultad.ReadOnly = true;
             this.Dificultad.Width = 80;
             // 
+            // labelIdioma
+            // 
+            this.labelIdioma.AutoSize = true;
+            this.labelIdioma.Location = new System.Drawing.Point(101, 20);
+            this.labelIdioma.Name = "labelIdioma";
+            this.labelIdioma.Size = new System.Drawing.Size(19, 13);
+            this.labelIdioma.TabIndex = 5;
+            this.labelIdioma.Text = "aa";
+            this.labelIdioma.Click += new System.EventHandler(this.labelIdioma_Click);
+            // 
             // Preguntas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.labelIdioma);
+            this.Controls.Add(this.dataGridViewPreguntas);
             this.Controls.Add(this.buttonBorrar);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonCrear);
             this.Name = "Preguntas";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Preguntas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreguntas)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -138,9 +152,10 @@
         private System.Windows.Forms.Button buttonCrear;
         private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.Button buttonBorrar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewPreguntas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dificultad;
+        private System.Windows.Forms.Label labelIdioma;
     }
 }

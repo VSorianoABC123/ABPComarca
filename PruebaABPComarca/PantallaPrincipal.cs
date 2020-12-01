@@ -32,8 +32,11 @@ namespace PruebaABPComarca
             else
             {
                 //Le pasamos el idioma por parametro
-                Preguntas pregunta = new Preguntas(comboBoxIdiomas.Text);
-                pregunta.ShowDialog();
+                Preguntas pregunta = new Preguntas();
+                pregunta.Text = comboBoxIdiomas.Text;
+
+
+                pregunta.Show();
             }
 
         }

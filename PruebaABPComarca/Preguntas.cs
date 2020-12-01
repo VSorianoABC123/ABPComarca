@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +16,37 @@ namespace PruebaABPComarca
     public partial class Preguntas : Form
     {
         List<Pregunta> preguntas = new List<Pregunta>();
-        public Preguntas(string idioma)
+        public Preguntas()
         {
+            
             InitializeComponent();
+            String ruta = rutaIdioma();
+
+            String idioma = Text;
+
+            switch (idioma)
+            {
+                case "Català":
+                    comprobarFichero(ruta);
+                    refrescar();
+                    break;
+
+                case "Castellano":
+                    comprobarFichero(ruta);
+                    refrescar();
+                    break;
+
+                case "English":
+                    comprobarFichero(ruta);
+                    refrescar();
+                    break;
+            }
         }
 
         private void Preguntas_Load(object sender, EventArgs e)
         {
             BloqueoBotones();
+            
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
@@ -81,8 +107,8 @@ namespace PruebaABPComarca
         private string rutaIdioma()
         {
             string ruta = "";
-            String Idioma = comboBoxIdiomes.Text;
-            switch (Idioma)
+            String idioma = Text;
+            switch (idioma)
             {
                 case "Català":
                     ruta = @"..\..\Resources\JSON\preguntesCAT.json";
@@ -117,6 +143,14 @@ namespace PruebaABPComarca
 
         }
 
+        private void dataGridViewPreguntas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
+
+        private void labelIdioma_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
