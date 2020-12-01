@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constantes.cs" />
     <Compile Include="Personaje.cs" />
     <Compile Include="PantallaPrincipal.cs">
       <SubType>Form</SubType>
@@ -94,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\OPCION 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

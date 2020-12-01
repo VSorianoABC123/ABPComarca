@@ -16,17 +16,33 @@ namespace PruebaABPComarca
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void PantallaPrincipal_Load(object sender, EventArgs e)
         {
-            Preguntas pregunta = new Preguntas();
-            pregunta.ShowDialog();
+            //EL IDIOMA DEL PROGRAMA NO CAMBIA, ESTO UNICAMENTE ELIGE EL JSON QUE SE CARGARÁ
+            comboBoxIdiomas.Items.AddRange(Constantes.Idiomas);
+        }
+
+        private void ButtonPreguntas_Click(object sender, EventArgs e)
+        {
+            if (comboBoxIdiomas.Text == "IDIOMA")
+            {
+                MessageBox.Show("Por favor, elige un idioma!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                //Le pasamos el idioma por parametro
+                Preguntas pregunta = new Preguntas(comboBoxIdiomas.Text);
+                pregunta.ShowDialog();
+            }
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ButtonPersonajes_Click(object sender, EventArgs e)
         {
 
         }
+
+        
     }
 }
