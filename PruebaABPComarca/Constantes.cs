@@ -9,7 +9,7 @@ namespace PruebaABPComarca
     public static class Constantes
     {
         public static String[] Idiomas { get; set; } = { "Català", "Castellano", "English" };
-        public static String[] Niveles { get; set; } = { "Fácil", "Difícil" };
-        public static String[] Temas { get; set; } = { "Espacio", "Mitos/Curiosidades", "Peliculas" };
+        public static String[] Dificultad { get; set; } = { "Fácil", "Difícil" };
+        public static String[] Edad { get; set; } = { "Joven", "Adulto"};
     }
 }

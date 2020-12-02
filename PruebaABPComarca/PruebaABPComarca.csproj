@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constantes.cs" />
+    <Compile Include="NuevaPregunta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevaPregunta.Designer.cs">
+      <DependentUpon>NuevaPregunta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Personaje.cs" />
     <Compile Include="PantallaPrincipal.cs">
       <SubType>Form</SubType>
@@ -67,6 +73,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Respuesta.cs" />
+    <EmbeddedResource Include="NuevaPregunta.resx">
+      <DependentUpon>NuevaPregunta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +111,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interrogante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\JSON\imagenes\imagen637117479312346875.jpg" />
+    <Content Include="Resources\JSON\imagenes\imagen637117480997498576.png" />
+    <Content Include="Resources\JSON\imagenes\imagen637117483234122253.jpg" />
+    <Content Include="Resources\JSON\imagenes\imagen637117483586151763.jpg" />
+    <Content Include="Resources\JSON\imagenes\imagen637117488455610448.jpg" />
+    <Content Include="Resources\JSON\imagenes\imagen637117489141427962.png" />
+    <Content Include="Resources\JSON\imagenes\imagen637117489556255249.jpg" />
+    <Content Include="Resources\JSON\imagenes\imagen637117490237647066.jpg" />
+    <Content Include="Resources\JSON\imagenes\imagen637117490671275997.png" />
+    <Content Include="Resources\JSON\imagenes\imagen637117491140263002.jpg" />
+    <Content Include="Resources\JSON\imagenes\imagen637117517661183494.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\ImagenesDefecto\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,9 +20,15 @@ namespace PruebaABPComarca
         {
             
             InitializeComponent();
+            
+        }
+
+        private void Preguntas_Load(object sender, EventArgs e)
+        {
+            BloqueoBotones();
             String ruta = rutaIdioma();
 
-            String idioma = Text;
+            String idioma = this.Text;
 
             switch (idioma)
             {
@@ -41,12 +47,7 @@ namespace PruebaABPComarca
                     refrescar();
                     break;
             }
-        }
 
-        private void Preguntas_Load(object sender, EventArgs e)
-        {
-            BloqueoBotones();
-            
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
@@ -56,7 +57,14 @@ namespace PruebaABPComarca
 
         private void buttonCrear_Click(object sender, EventArgs e)
         {
+            NuevaPregunta nuevaPregunta = new NuevaPregunta();
+            nuevaPregunta.Text = this.Text;
+            this.Close();
+            nuevaPregunta.ShowDialog();
+            
 
+
+            
         }
 
         private void buttonBorrar_Click(object sender, EventArgs e)

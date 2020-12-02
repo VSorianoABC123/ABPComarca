@@ -35,7 +35,6 @@
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dificultad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelIdioma = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreguntas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,22 +117,11 @@
             this.Dificultad.ReadOnly = true;
             this.Dificultad.Width = 80;
             // 
-            // labelIdioma
-            // 
-            this.labelIdioma.AutoSize = true;
-            this.labelIdioma.Location = new System.Drawing.Point(101, 20);
-            this.labelIdioma.Name = "labelIdioma";
-            this.labelIdioma.Size = new System.Drawing.Size(19, 13);
-            this.labelIdioma.TabIndex = 5;
-            this.labelIdioma.Text = "aa";
-            this.labelIdioma.Click += new System.EventHandler(this.labelIdioma_Click);
-            // 
             // Preguntas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelIdioma);
             this.Controls.Add(this.dataGridViewPreguntas);
             this.Controls.Add(this.buttonBorrar);
             this.Controls.Add(this.buttonEditar);
@@ -143,7 +131,6 @@
             this.Load += new System.EventHandler(this.Preguntas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreguntas)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -156,6 +143,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dificultad;
-        private System.Windows.Forms.Label labelIdioma;
     }
 }
