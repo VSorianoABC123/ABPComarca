@@ -67,11 +67,13 @@
             // 
             // comboBoxEdad
             // 
+            this.comboBoxEdad.Cursor = System.Windows.Forms.Cursors.Default;
             this.comboBoxEdad.FormattingEnabled = true;
             this.comboBoxEdad.Location = new System.Drawing.Point(27, 267);
             this.comboBoxEdad.Name = "comboBoxEdad";
             this.comboBoxEdad.Size = new System.Drawing.Size(190, 21);
             this.comboBoxEdad.TabIndex = 3;
+            this.comboBoxEdad.TabStop = false;
             this.comboBoxEdad.Tag = "Edad...";
             // 
             // comboBoxDificultad
@@ -81,6 +83,7 @@
             this.comboBoxDificultad.Name = "comboBoxDificultad";
             this.comboBoxDificultad.Size = new System.Drawing.Size(190, 21);
             this.comboBoxDificultad.TabIndex = 4;
+            this.comboBoxDificultad.TabStop = false;
             this.comboBoxDificultad.Tag = "Dificultad...";
             // 
             // groupBoxRespuestas
@@ -184,10 +187,12 @@
             // 
             // pictureBoxPregunta
             // 
+            this.pictureBoxPregunta.Image = global::PruebaABPComarca.Properties.Resources.interrogante;
             this.pictureBoxPregunta.InitialImage = global::PruebaABPComarca.Properties.Resources.interrogante;
             this.pictureBoxPregunta.Location = new System.Drawing.Point(27, 50);
             this.pictureBoxPregunta.Name = "pictureBoxPregunta";
             this.pictureBoxPregunta.Size = new System.Drawing.Size(190, 132);
+            this.pictureBoxPregunta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPregunta.TabIndex = 0;
             this.pictureBoxPregunta.TabStop = false;
             this.pictureBoxPregunta.Click += new System.EventHandler(this.pictureBoxPregunta_Click);

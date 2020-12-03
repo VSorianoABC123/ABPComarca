@@ -16,6 +16,7 @@ namespace PruebaABPComarca
     public partial class Preguntas : Form
     {
         List<Pregunta> preguntas = new List<Pregunta>();
+        Boolean modificarPregunta;
         public Preguntas()
         {
             
@@ -53,23 +54,77 @@ namespace PruebaABPComarca
         private void buttonEditar_Click(object sender, EventArgs e)
         {
 
+            if (dataGridViewPreguntas.SelectedRows.Count > 0)
+            {
+                String ruta = rutaIdioma();
+                modificarPregunta = true;
+
+
+                //Elimino la pregunta
+                Pregunta pregunta = (Pregunta)dataGridViewPreguntas.SelectedRows[0].DataBoundItem;
+
+                foreach (DataGridViewRow eliminarPregunta in dataGridViewPreguntas.SelectedRows)
+                {
+                    preguntas.Remove((Pregunta)eliminarPregunta.DataBoundItem);
+                }
+
+                guardarFichero();
+
+
+                NuevaPregunta editarPregunta = new NuevaPregunta(preguntas, pregunta, modificarPregunta);
+                editarPregunta.Text = this.Text;
+                editarPregunta.ShowDialog();
+
+                //Actualiza el gridView con los datos introducidos
+                comprobarFichero(ruta);
+                refrescar();
+
+            }
+            else
+            {
+                MessageBox.Show("Error, ninguna pregunta seleccionada", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonCrear_Click(object sender, EventArgs e)
         {
-            NuevaPregunta nuevaPregunta = new NuevaPregunta();
-            nuevaPregunta.Text = this.Text;
-            this.Close();
+            modificarPregunta = false;
+            String ruta = rutaIdioma();
+
+            Pregunta pregunta = new Pregunta();
+            NuevaPregunta nuevaPregunta = new NuevaPregunta(preguntas, pregunta, modificarPregunta);
+            nuevaPregunta.Text = this.Text;            
             nuevaPregunta.ShowDialog();
+            preguntas.Add(pregunta);
             
+            comprobarFichero(ruta);
+            refrescar();
 
 
-            
         }
 
         private void buttonBorrar_Click(object sender, EventArgs e)
         {
+            var respuesta = MessageBox.Show("¿Estás seguro que quieres eliminar la pregunta?", "ELIMINAR", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
 
+            if (respuesta == DialogResult.Yes)
+            {
+
+                if (dataGridViewPreguntas.SelectedRows.Count > 0)
+                {
+                    foreach (DataGridViewRow eliminarPregunta in dataGridViewPreguntas.SelectedRows)
+                    {
+                        preguntas.Remove((Pregunta)eliminarPregunta.DataBoundItem);
+                    }
+                    refrescar();
+                    guardarFichero();
+
+                }
+                else
+                {
+                    MessageBox.Show("Error, ninguna pregunta seleccionada", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         //Para que no se pueda elegir nada sin haber objetos en el json
@@ -106,8 +161,6 @@ namespace PruebaABPComarca
             jArrayPreguntas.WriteTo(jsonwriter);
 
             jsonwriter.Close();
-
-            MessageBox.Show("Guardado correctamente", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
 
@@ -146,7 +199,7 @@ namespace PruebaABPComarca
             }
             else
             {
-                MessageBox.Show("No existe fichero con preguntas del idioma seleccionado", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No existe el fichero con preguntas del idioma seleccionado. Creandolo.", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -156,9 +209,5 @@ namespace PruebaABPComarca
 
         }
 
-        private void labelIdioma_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -18,9 +18,14 @@ namespace PruebaABPComarca
         List<Pregunta> preguntas = new List<Pregunta>();
         String enlace;
         bool defecto;
+        Boolean modificar;
+        Pregunta pregunta;
 
-        public NuevaPregunta()
+        public NuevaPregunta(List<Pregunta> preguntas, Pregunta preguntaNueva,Boolean modificarPregunta)
         {
+            modificar = modificarPregunta;
+            pregunta = preguntaNueva;
+
             InitializeComponent();
         }
         private void NuevaPregunta_Load(object sender, EventArgs e)
@@ -28,6 +33,33 @@ namespace PruebaABPComarca
 
             comboBoxEdad.Items.AddRange(Constantes.Edad);
             comboBoxDificultad.Items.AddRange(Constantes.Dificultad);
+            if (modificar == true)
+            {
+                textBoxTitulo.Text = pregunta.titulo;
+                pictureBoxPregunta.ImageLocation = pregunta.imagen;
+                comboBoxEdad.SelectedItem = pregunta.edad;
+                comboBoxDificultad.SelectedItem = pregunta.dificultad;
+                textBoxRespuesta1.Text = pregunta.respuestas[0].respuesta.ToString();
+                if (pregunta.respuestas[0].correcte == true)
+                {
+                    radioButtonRespuesta1.Checked = true;
+                }
+                textBoxRespuesta2.Text = pregunta.respuestas[1].respuesta.ToString();
+                if (pregunta.respuestas[1].correcte == true)
+                {
+                    radioButtonRespuesta2.Checked = true;
+                }
+                textBoxRespuesta3.Text = pregunta.respuestas[2].respuesta.ToString();
+                if (pregunta.respuestas[2].correcte == true)
+                {
+                    radioButtonRespuesta3.Checked = true;
+                }
+                textBoxRespuesta4.Text = pregunta.respuestas[3].respuesta.ToString();
+                if (pregunta.respuestas[3].correcte == true)
+                {
+                    radioButtonRespuesta4.Checked = true;
+                }
+            }
 
         }
 
@@ -188,10 +220,7 @@ namespace PruebaABPComarca
                 //LLAMAMOS A LA FUNCION DE GUARDAR
                 guardarFichero();
                 //CERRAMOS EL FORM
-                Preguntas formPregunta = new Preguntas();
-                formPregunta.Text = this.Text;
                 this.Close();
-                formPregunta.ShowDialog();
                 
             }
         }
@@ -214,6 +243,8 @@ namespace PruebaABPComarca
         {
             string rutaImagenes = @"..\..\Resources\JSON\imagenes\";
             OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            //NO FUNCIONA
 
             if (defecto == true){
                 openFileDialog.InitialDirectory = enlace;

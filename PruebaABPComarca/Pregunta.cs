@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PruebaABPComarca
 {
-    class Pregunta
+    public class Pregunta
     {
         public string titulo { get; set; }
         public string imagen { get; set; }
