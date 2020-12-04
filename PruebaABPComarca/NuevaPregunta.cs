@@ -28,6 +28,8 @@ namespace PruebaABPComarca
 
             InitializeComponent();
         }
+
+        //Carga los elementos en el formulario, si recibe el booleano de modificar tambien introduce todos los datos.
         private void NuevaPregunta_Load(object sender, EventArgs e)
         {
 
@@ -63,6 +65,7 @@ namespace PruebaABPComarca
 
         }
 
+        //Dependiendo de el idioma que reciba por parametro cargara un JSON u otro.
         private string rutaIdioma()
         {
             string ruta = "";
@@ -83,6 +86,8 @@ namespace PruebaABPComarca
             }
             return ruta;
         }
+
+        //Guarda los datos en el JSON
         private void guardarFichero()
         {
             string ruta = rutaIdioma();
@@ -103,6 +108,8 @@ namespace PruebaABPComarca
             throw new NotImplementedException();
         }
 
+
+        //Se comprueba que el fichero JSON existe.
         private void comprobarFichero(String ruta)
         {
             //VACIAMOS LA LISTA
@@ -130,6 +137,8 @@ namespace PruebaABPComarca
 
         }
 
+
+        //Comprueba que todos los campos esten completados, y luego los guarda.
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             if (textBoxTitulo.Text == "" || comboBoxEdad.Text == "" || comboBoxDificultad.Text == "" || textBoxRespuesta1.Text == "" || textBoxRespuesta2.Text == "" || textBoxRespuesta3.Text == "" || textBoxRespuesta4.Text == "")
@@ -216,14 +225,13 @@ namespace PruebaABPComarca
                 }
 
                 preguntas.Add(pregunta);
-
-                //LLAMAMOS A LA FUNCION DE GUARDAR
                 guardarFichero();
-                //CERRAMOS EL FORM
                 this.Close();
                 
             }
         }
+
+        //El objetivo es que depende de donde se de se abre desde una carpeta inicial o no. De momento no esta bien implementado.
 
         private void pictureBoxPregunta_Click(object sender, EventArgs e)
         {
@@ -253,8 +261,6 @@ namespace PruebaABPComarca
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                //pictureBoxPregunta.ImageLocation = openFileDialog.FileName;
-                //pictureBoxPregunta.BackgroundImageLayout = ImageLayout.Stretch;
                 if (pictureBoxPregunta.ImageLocation == null)
                 {
                     if (openFileDialog.FileName.EndsWith(".png"))
@@ -297,7 +303,6 @@ namespace PruebaABPComarca
                     pictureBoxPregunta.ImageLocation = rutaImagenes;
 
                 }
-                // rutaDefinitiva = rutaImagenes.Substring(16);
             }
 
         }
