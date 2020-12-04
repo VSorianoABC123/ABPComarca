@@ -105,7 +105,7 @@ namespace PruebaABPComarca
 
         private void buttonBorrar_Click(object sender, EventArgs e)
         {
-            var respuesta = MessageBox.Show("¿Estás seguro que quieres eliminar la pregunta?", "ELIMINAR", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            var respuesta = MessageBox.Show("¿ESTÁS SEGURO DE QUE QUIERES BORRAR LA PREGUNTA?", "ELIMINAR", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
 
             if (respuesta == DialogResult.Yes)
             {
@@ -150,6 +150,7 @@ namespace PruebaABPComarca
 
         }
 
+        //Comprueba la ruta de los JSON y lo guarda
         private void guardarFichero()
         {
             string ruta = rutaIdioma();
@@ -165,6 +166,7 @@ namespace PruebaABPComarca
 
 
 
+        //Comprueba la ruta de los JSON
         private string rutaIdioma()
         {
             string ruta = "";
@@ -193,7 +195,6 @@ namespace PruebaABPComarca
 
             if (System.IO.File.Exists(ruta))
             {
-                //MessageBox.Show("El fichero existe");
                 JArray jArrayPreguntas = JArray.Parse(File.ReadAllText(ruta));
                 preguntas = jArrayPreguntas.ToObject<List<Pregunta>>();
             }
