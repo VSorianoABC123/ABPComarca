@@ -78,7 +78,9 @@
             this.comboBoxIdiomas.Name = "comboBoxIdiomas";
             this.comboBoxIdiomas.Size = new System.Drawing.Size(126, 39);
             this.comboBoxIdiomas.TabIndex = 3;
+            this.comboBoxIdiomas.Tag = "";
             this.comboBoxIdiomas.Text = "IDIOMA";
+            this.comboBoxIdiomas.SelectedIndexChanged += new System.EventHandler(this.comboBoxIdiomas_SelectedIndexChanged);
             // 
             // PantallaPrincipal
             // 

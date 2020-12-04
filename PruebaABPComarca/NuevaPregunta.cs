@@ -16,7 +16,6 @@ namespace PruebaABPComarca
     public partial class NuevaPregunta : Form
     {
         List<Pregunta> preguntas = new List<Pregunta>();
-        String enlace;
         bool defecto;
         Boolean modificar;
         Pregunta pregunta;
@@ -141,7 +140,7 @@ namespace PruebaABPComarca
         //Comprueba que todos los campos esten completados, y luego los guarda.
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            if (textBoxTitulo.Text == "" || comboBoxEdad.Text == "" || comboBoxDificultad.Text == "" || textBoxRespuesta1.Text == "" || textBoxRespuesta2.Text == "" || textBoxRespuesta3.Text == "" || textBoxRespuesta4.Text == "")
+            if (textBoxTitulo.Text == "" || comboBoxEdad.Text == "IDIOMA" || comboBoxDificultad.Text == "DIFICULTAD" || textBoxRespuesta1.Text == "" || textBoxRespuesta2.Text == "" || textBoxRespuesta3.Text == "" || textBoxRespuesta4.Text == "")
             {
                 MessageBox.Show("Faltan campos por completar", "INFORMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -231,31 +230,32 @@ namespace PruebaABPComarca
             }
         }
 
-        //El objetivo es que depende de donde se de se abre desde una carpeta inicial o no. De momento no esta bien implementado.
+        //Depende de donde se de se abre desde una carpeta inicial o no. SOLUCIONADO!!!
 
         private void pictureBoxPregunta_Click(object sender, EventArgs e)
         {
-            enlace = "";
             defecto = false;
-            subirImagen(enlace, defecto);
+            subirImagen(defecto);
         }
 
         private void buttonImatgeDefecte_Click(object sender, EventArgs e)
         {
-            enlace = @"..\..\Resources\ImagenesDefecto\";
             defecto = true;
-            subirImagen(enlace, defecto);
+            subirImagen(defecto);
         }
 
-        private void subirImagen(string enlace, bool defecto)
+        private void subirImagen(bool defecto)
         {
-            string rutaImagenes = @"..\..\Resources\JSON\imagenes\";
+            string rutaImagenes = @"..\..\Resources\JSON\imagenes\\";
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            string path = System.IO.Directory.GetCurrentDirectory();
+            path += "\\ImagenesDefecto";
+
 
             //NO FUNCIONA
 
             if (defecto == true){
-                openFileDialog.InitialDirectory = enlace;
+                openFileDialog.InitialDirectory = path;
             }
             
 
@@ -303,10 +303,21 @@ namespace PruebaABPComarca
                     pictureBoxPregunta.ImageLocation = rutaImagenes;
 
                 }
+                // rutaDefinitiva = rutaImagenes.Substring(16);
             }
 
         }
 
-       
+        private void comboBoxEdad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //CAMBIO A LAS COMBOBOX!
+            comboBoxEdad.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void comboBoxDificultad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //CAMBIO A LAS COMBOBOX!
+            comboBoxDificultad.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
     }
     }

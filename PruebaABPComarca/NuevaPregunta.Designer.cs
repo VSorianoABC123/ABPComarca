@@ -74,7 +74,9 @@
             this.comboBoxEdad.Size = new System.Drawing.Size(190, 21);
             this.comboBoxEdad.TabIndex = 3;
             this.comboBoxEdad.TabStop = false;
-            this.comboBoxEdad.Tag = "Edad...";
+            this.comboBoxEdad.Tag = "";
+            this.comboBoxEdad.Text = "EDAD";
+            this.comboBoxEdad.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdad_SelectedIndexChanged);
             // 
             // comboBoxDificultad
             // 
@@ -84,7 +86,9 @@
             this.comboBoxDificultad.Size = new System.Drawing.Size(190, 21);
             this.comboBoxDificultad.TabIndex = 4;
             this.comboBoxDificultad.TabStop = false;
-            this.comboBoxDificultad.Tag = "Dificultad...";
+            this.comboBoxDificultad.Tag = "";
+            this.comboBoxDificultad.Text = "DIFICULTAD";
+            this.comboBoxDificultad.SelectedIndexChanged += new System.EventHandler(this.comboBoxDificultad_SelectedIndexChanged);
             // 
             // groupBoxRespuestas
             // 

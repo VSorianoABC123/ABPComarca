@@ -46,6 +46,10 @@ namespace PruebaABPComarca
 
         }
 
-        
+        private void comboBoxIdiomas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //CAMBIO A LAS COMBOBOX!
+            comboBoxIdiomas.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
     }
 }

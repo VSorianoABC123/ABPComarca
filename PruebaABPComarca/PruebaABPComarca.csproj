@@ -128,8 +128,6 @@
     <Content Include="Resources\JSON\imagenes\imagen637117491140263002.jpg" />
     <Content Include="Resources\JSON\imagenes\imagen637117517661183494.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\ImagenesDefecto\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
